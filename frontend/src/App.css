@@ -1,0 +1,288 @@
+/* Diese Datei enthaelt die Layout- und Designregeln fuer die Hauptseite der Anwendung. */
+
+.app {
+  /* Die Anwendung wird vertikal aufgebaut: Header oben, Inhalt darunter. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header im Stil der SCHUNK Webseite */
+
+.schunk-header {
+  /* Der Header besteht aus mehreren horizontalen Bereichen. */
+  width: 100%;
+}
+
+.schunk-topbar {
+  /* Der obere Balken ist dunkelblau und enthaelt Logo, Claim und Status. */
+  background: var(--schunk-blue-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.schunk-topbar-inner {
+  /* Wir begrenzen die Breite und richten Inhalte horizontal aus. */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.schunk-brand {
+  /* Links im Header: Logo und Claim. */
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.schunk-logo {
+  /* Das Logo wird in der Hoehe begrenzt, damit es im Balken sauber wirkt. */
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.schunk-claim {
+  /* Der Claim ist klein und dezent, wie im Original-Header. */
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.schunk-status {
+  /* Rechts im Header: Status als kleines Badge. */
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.schunk-status.connected {
+  /* Online-Zustand wird in Akzentfarbe angedeutet. */
+  border-color: rgba(0, 163, 217, 0.6);
+}
+
+.schunk-status.checking {
+  /* Beim Pruefen bleibt das Badge neutral. */
+  opacity: 0.95;
+}
+
+.schunk-status.error {
+  /* Offline-Zustand wird sichtbar, bleibt aber im Corporate Look. */
+  border-color: rgba(255, 110, 110, 0.6);
+  color: rgba(255, 210, 210, 0.95);
+}
+
+.schunk-subbar {
+  /* Der zweite Balken ist etwas heller und enthaelt die Seitenbezeichnung. */
+  background: #0a6c8c;
+}
+
+.schunk-subbar-inner {
+  /* Auch hier begrenzen wir die Breite wie bei einer typischen Webseite. */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.schunk-subbar-title {
+  /* Die Seitenbezeichnung wirkt wie ein Navigationspunkt. */
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(0, 163, 217, 0.95);
+  padding-bottom: 6px;
+}
+
+.schunk-hero {
+  /* Der Titelbereich ist dunkelblau mit viel Luft, wie auf der Produktseite. */
+  background: var(--schunk-blue);
+}
+
+.schunk-hero-inner {
+  /* Inhalt zentriert mit typischer Seitenbreite. */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 20px 28px 20px;
+}
+
+.hero-title {
+  /* Grosser Titel in Weiss. */
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+
+.hero-subtitle {
+  /* Untertitel in hellerem Weiss. */
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+/* Hauptinhalt */
+
+.app-main {
+  /* Der Hauptbereich nimmt den restlichen Platz ein. */
+  flex: 1;
+  padding: 26px 20px;
+}
+
+.chat-shell {
+  /* Die Chat-Karte sitzt mittig und wirkt wie ein Panel auf einer Webseite. */
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+}
+
+.chat-header-row {
+  /* Kopfzeile im Panel, bewusst schlicht. */
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.chat-header-title {
+  /* Titel fuer den Chat-Bereich. */
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.chat-messages {
+  /* Nachrichtenbereich mit Scroll, damit das Layout stabil bleibt. */
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+  background: #ffffff;
+}
+
+.transcript-preview {
+  /* Die Vorschau der erkannten Sprache ist ein dezenter Hinweis. */
+  margin-top: 12px;
+  padding: 12px 12px;
+  border: 1px dashed rgba(0, 163, 217, 0.5);
+  border-radius: 10px;
+  background: rgba(0, 163, 217, 0.06);
+}
+
+.transcript-label {
+  /* Kleine Beschriftung fuer die Vorschau. */
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.transcript-text {
+  /* Der erkannte Text wird normal dargestellt. */
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.chat-input-area {
+  /* Eingabebereich unten, mit klarer Trennung. */
+  padding: 16px 18px 18px 18px;
+  border-top: 1px solid var(--border-color);
+  background: #ffffff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.text-input-form {
+  /* Textinput und Button stehen in einer Reihe. */
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.text-input-form input {
+  /* Der Input ist klar und modern wie auf einer Corporate Webseite. */
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.text-input-form input:focus {
+  /* Fokus zeigt Akzentfarbe. */
+  border-color: rgba(0, 163, 217, 0.9);
+  box-shadow: 0 0 0 3px rgba(0, 163, 217, 0.15);
+}
+
+.text-input-form button {
+  /* Button in Akzentfarbe, passend zum SCHUNK Look. */
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 163, 217, 0.95);
+  background: rgba(0, 163, 217, 0.95);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.text-input-form button:disabled,
+.text-input-form input:disabled {
+  /* Bei deaktiviertem Zustand wird alles heller. */
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.voice-area {
+  /* Der Sprachbutton sitzt zentriert unter dem Texteingabebereich. */
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Kleine Bildschirme */
+
+@media (max-width: 720px) {
+  .schunk-claim {
+    /* Auf kleinen Bildschirmen blenden wir den Claim aus, damit es nicht bricht. */
+    display: none;
+  }
+
+  .chat-shell {
+    /* Auf kleineren Bildschirmen nutzen wir die volle Breite. */
+    min-height: 520px;
+  }
+
+  .text-input-form {
+    /* Auf kleinen Bildschirmen stapeln wir die Eingabe untereinander. */
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .text-input-form button {
+    /* Der Button nimmt dann die volle Breite ein. */
+    width: 100%;
+  }
+}

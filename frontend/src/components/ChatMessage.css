@@ -1,0 +1,93 @@
+/* Diese Datei beschreibt das Aussehen einzelner Chat-Nachrichten. */
+
+.chat-message {
+  /* Jede Nachricht bekommt einen Abstand nach unten. */
+  margin-bottom: 14px;
+}
+
+.message-content {
+  /* Avatar und Text stehen nebeneinander. */
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Avatar */
+
+.avatar {
+  /* Der Avatar ist ein Kreis mit kurzem Text. */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  flex: 0 0 36px;
+  user-select: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+  background: #ffffff;
+}
+
+.avatar.user {
+  /* Nutzeravatar dezent in Hellgrau. */
+  background: #f1f5f9;
+}
+
+.avatar.bot {
+  /* Botavatar in Corporate Blau. */
+  background: rgba(0, 61, 106, 0.08);
+  border-color: rgba(0, 61, 106, 0.25);
+}
+
+.avatar.system {
+  /* Systemavatar neutral. */
+  background: rgba(90, 106, 120, 0.08);
+}
+
+/* Bubble */
+
+.message-bubble {
+  /* Der Text steckt in einer abgerundeten Box. */
+  max-width: 720px;
+  border-radius: 12px;
+  padding: 12px 12px;
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+}
+
+.chat-message.user .message-bubble {
+  /* Nutzer-Nachrichten erhalten einen leichten Blauton. */
+  border-color: rgba(0, 61, 106, 0.25);
+  background: rgba(0, 61, 106, 0.06);
+}
+
+.chat-message.bot .message-bubble {
+  /* Bot-Nachrichten sind neutral, damit der Fokus auf Inhalt liegt. */
+  background: #ffffff;
+}
+
+.chat-message.system .message-bubble {
+  /* Systemmeldungen sind leicht gelblich, ohne Warnsymbole. */
+  border-color: rgba(207, 139, 0, 0.35);
+  background: rgba(207, 139, 0, 0.08);
+}
+
+.message-bubble p {
+  /* Der eigentliche Text wird normal lesbar dargestellt. */
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-dark);
+  white-space: pre-wrap;
+}
+
+.timestamp {
+  /* Zeitstempel ist klein und unauffaellig. */
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}

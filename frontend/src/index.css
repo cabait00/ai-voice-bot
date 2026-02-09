@@ -1,0 +1,56 @@
+/* Diese Datei legt globale Grundstile fuer die gesamte Anwendung fest. */
+
+:root {
+  /* Diese Variablen definieren zentrale Farben im Stil der SCHUNK Webseite. */
+  --schunk-blue: #003d6a;
+  --schunk-blue-dark: #002f52;
+  --schunk-accent: #00a3d9;
+  --page-bg: #f4f7fa;
+  --text-dark: #0f2233;
+  --text-muted: #5a6a78;
+  --card-bg: #ffffff;
+  --border-color: #d9e2ea;
+}
+
+* {
+  /* Wir sorgen dafuer, dass Abstaende und Groessen berechenbar sind. */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Wir definieren eine neutrale Schrift und setzen den Hintergrund hell, wie bei SCHUNK. */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--page-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+#root {
+  /* Die Anwendung nimmt die volle Breite ein, damit das Layout wie eine Webseite wirkt. */
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Wir passen die Scrollbar dezent an, ohne auffaellige Effekte zu verwenden. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
